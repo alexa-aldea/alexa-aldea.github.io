@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Compare Countries</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+
+<body>
+  <center>
+
+    <canvas id="line-chart" width="800" height="450"></canvas>
+    <script>
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          labels : [
+          {% for item in labels %}
+           "{{ item }}",
+          {% endfor %}
+	      ],
+          datasets: [{
+              data : [
+                {% for item in values['SWE'] %}
+                  {{ item }},
+                {% endfor %}],
+              label: "SWE",
+              borderColor: "#228DA3",
+              fill: false
+            },
+            {
+              data : [
+                {% for item in values['NOR'] %}
+                  {{ item }},
+                {% endfor %}],
+              label: "NOR",
+              borderColor: "#313074",
+              fill: false
+            },
+            {
+              data : [
+                {% for item in values['DNK'] %}
+                  {{ item }},
+                {% endfor %}],
+              label: "DNK",
+              borderColor: "#B93658",
+              fill: false
+            },
+            {
+              data : [
+                {% for item in values['UK'] %}
+                  {{ item }},
+                {% endfor %}],
+              label: "UK",
+              borderColor: "#E5861A",
+              fill: false
+            },
+          ]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Coronita's daily victims/1M pop",
+            fontSize: 18,
+          },
+          responsive:false
+        }
+      });
+
+
+  </script>
+  </center>
+</body>
+</html>
