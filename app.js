@@ -51,7 +51,8 @@ function renderChart(labels, dataset, legend) {
             text: "Coronita's daily victims/1M pop",
             fontSize: 18,
           },
-	 maintainAspectRatio: false,
+	responsive: true,
+	maintainAspectRatio: false,
 	}
       });
 
