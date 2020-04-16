@@ -23,24 +23,28 @@ function renderChart(labels, dataset, legend) {
               data : dataset[legend[0]],
               label: legend[0],
               borderColor: "#228DA3",
+	      backgroundColor: "#228DA3",
               fill: false
             },
             {
               data : dataset[legend[1]],
               label: legend[1],
               borderColor: "#313074",
+	      backgroundColor: "#313074",
               fill: false
             },
             {
               data : dataset[legend[2]],
               label: legend[2],
               borderColor: "#B93658",
+	      backgroundColor: "#B93658",
               fill: false
             },
             {
               data : dataset[legend[3]],
               label: legend[3],
               borderColor: "#E5861A",
+	      backgroundColor: "#E5861A",
               fill: false
             },
           ]
